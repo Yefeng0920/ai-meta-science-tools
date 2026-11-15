@@ -1,0 +1,17 @@
+name: "ai-meta-science-tools"
+output_dir: "../docs"
+navbar:
+  title: "AI Meta-Science Tools and Resources"
+  left:
+    - text: "Directory"
+      href: index.html
+    - text: "Methods"
+      href: methods.html
+    - text: "Contribute"
+      href: contributing.html
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: false
+    css: styles.css

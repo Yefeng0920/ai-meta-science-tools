@@ -1,0 +1,10 @@
+---
+title: "Methods and definitions"
+---
+
+```{r, echo=FALSE, results='asis'}
+cat(paste(readLines('../METHODS.md', warn=FALSE),collapse='
+'))
+```
+
+**Disclaimer:** Inclusion is not endorsement. Automated flags do not establish misconduct. Unvalidated systems should not make autonomous consequential decisions.

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the versioned release used."
+title: "AI Meta-Science Tools and Resources"
+type: dataset
+authors:
+  - family-names: Yang
+    given-names: Yefeng
+version: 0.1.0
+date-released: 2026-10-27
+license: CC-BY-4.0

@@ -1,0 +1,7 @@
+source('R/validate_data.R')
+validate_data()
+if (!requireNamespace('rmarkdown',quietly=TRUE) || !requireNamespace('DT',quietly=TRUE) || !requireNamespace('htmltools',quietly=TRUE)) stop('Install rmarkdown, DT and htmltools')
+rmarkdown::render_site('site', quiet=TRUE)
+dir.create('docs', showWarnings=FALSE)
+file.copy('data/tools.csv', 'docs/tools.csv', overwrite=TRUE)
+file.copy('CODEBOOK.md', 'docs/CODEBOOK.md', overwrite=TRUE)

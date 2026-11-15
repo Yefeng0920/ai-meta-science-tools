@@ -1,0 +1,13 @@
+Package: aimetasciencetools
+Title: Build the AI Meta-Science Tools Directory
+Version: 0.1.0
+Authors@R: person("Yefeng", "Yang", role = "aut")
+Description: Records the direct R dependencies of the curated directory website.
+License: MIT
+Encoding: UTF-8
+Imports:
+    rmarkdown,
+    DT,
+    htmltools,
+    htmlwidgets
+Config/Needs/website: rmarkdown, DT, htmltools, htmlwidgets

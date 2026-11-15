@@ -1,0 +1,10 @@
+---
+title: "Contribute and correct"
+---
+
+```{r, echo=FALSE, results='asis'}
+cat(paste(readLines('../CONTRIBUTING.md', warn=FALSE),collapse='
+'))
+```
+
+Open an issue to suggest a tool, correct an entry, report a broken link or submit new evaluation evidence. Provide the primary source and the affected row ID. The public repository URL will be added after publication.

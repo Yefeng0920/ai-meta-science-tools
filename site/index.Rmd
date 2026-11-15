@@ -1,0 +1,26 @@
+---
+title: "AI Meta-Science Tools and Resources"
+---
+
+*A curated directory of tools, agentic systems and benchmarks for evaluating and improving science.*
+
+**Candidate version 0.1.0 · Last curation: 27 October 2026**
+
+AI meta-science uses computational methods to assess how research is conducted and how reliable its claims are. This directory connects researchers checking their own work, meta-researchers, editors, institutions, funders and AI developers to documented starting points. It distinguishes narrow checks, AI-assisted assessment, coordinated agents, infrastructure and benchmarks. The proposed autonomous AI meta-scientist would integrate these capabilities; no entry here represents that complete vision.
+
+Resources were selected from original publications and official technical sources. Entries summarize evidence and limitations, not endorsements. **Automated flags do not establish misconduct; consequential decisions need human assessment.** Availability and scientific validity can change. See [Methods](methods.html).
+
+## Search the directory
+
+Use the search box or the column filters below. The details column contains evidence, limitations and source links. On a narrow screen, scroll horizontally.
+
+```{r directory, echo=FALSE, message=FALSE, warning=FALSE}
+source('../R/validate_data.R')
+x <- validate_data('../data/tools.csv')
+link <- function(u,label) ifelse(grepl('^https://',u),paste0('<a href="',htmltools::htmlEscape(u),'" rel="noopener noreferrer" target="_blank">',label,'</a>'),'—')
+details <- paste0('<strong>Evidence:</strong> ',htmltools::htmlEscape(x$validation_evidence),' (',x$evidence_class,')<br><strong>Limit:</strong> ',htmltools::htmlEscape(x$limitations),'<br>',mapply(link,x$official_url,'Official'),' · ',mapply(link,x$publication_url,'Publication'),' · ',mapply(link,x$repository_url,'Code'))
+shown <- data.frame(Resource=htmltools::htmlEscape(x$name),Summary=htmltools::htmlEscape(x$description),Category=x$category,Users=x$target_users,Availability=x$availability,Agency=x$agentic_level,Domain=x$research_domain,Details=details,check.names=FALSE)
+DT::datatable(shown,escape=FALSE,rownames=FALSE,filter='top',extensions='Buttons',options=list(pageLength=10,scrollX=TRUE,dom='Bfrtip',buttons=c('csv'),autoWidth=TRUE))
+```
+
+The full [CSV dataset](tools.csv) and [codebook](CODEBOOK.md) are in the repository. A benchmark measures systems; it is not itself an operational checker.
